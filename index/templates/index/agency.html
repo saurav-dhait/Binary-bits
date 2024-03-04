@@ -1,12 +1,12 @@
 {% extends 'layout.html' %}
 {% block content %}
-<div class="flex flex-col items-center">
-    <div class="pt-24">
+<div class="flex flex-col items-center" >
+    <div class="pt-24" data-aos="flip-up">
         <h1 class="text-3xl font-bold dark:text-white text-black">
             Agency
         </h1>
     </div>
-    <div class="pt-8 pb-16">
+    <div class="pt-8 pb-16" data-aos="flip-up">
         <h1 class="text-xl font-bold dark:text-white text-black">
             Hello, {{ user.username }}!
         </h1>
@@ -14,7 +14,7 @@
 
 
 
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg w-[800px] ">
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg w-[800px] " data-aos="zoom-in">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 text-center">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -41,6 +41,14 @@
     </table>
 </div>
 
+
+<div class="pt-40">
+    <div>
+        <button type="button" class="px-5 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Edit Inventory</button>
+
+        <button type="button" class="px-5 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">View Inventory</button>
+    </div>
+</div>
 
 </div>
 {% endblock %}
