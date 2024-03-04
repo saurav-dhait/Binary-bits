@@ -1,0 +1,7 @@
+services:
+  - type: web
+    plan: free
+    name: atlas-rescue
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "python -m gunicorn django_2.asgi:application -k uvicorn.workers.UvicornWorker"

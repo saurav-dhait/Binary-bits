@@ -1,7 +1,6 @@
-from django.shortcuts import render
-
-
-# Create your views here.
+from django.shortcuts import HttpResponse, get_object_or_404, render
+from django.http import JsonResponse
+from .models import Agency
 
 
 def home(request):
@@ -16,5 +15,13 @@ def chatbot(request):
     return render(request, "index/chatbot.html")
 
 
-def agency(request):
-    return render(request, "index/agency.html")
+def get_agency_details(request, agency_id):
+    agency = get_object_or_404(Agency, id=agency_id)
+    data = {
+        "id": agency.id,
+        "address": agency.address,
+        "type_of_agency": agency.type_of_agency,
+        "contact": agency.contact,
+        "email": agency.email,
+    }
+    return JsonResponse(data)
