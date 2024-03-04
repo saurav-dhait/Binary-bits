@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-i&sre(^ud#1-17b0r9xhmyjqr&2@16gra&xx-o4vxsr5wyo1k%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['atlas-rescue.onrender.com', "127.0.0.1"]
 
