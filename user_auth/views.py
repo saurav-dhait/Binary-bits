@@ -13,7 +13,6 @@ def login_user(request):
         password = request.POST.get("password")
         email = request.POST.get("email")
 
-
         user = None
         try:
             user = MyUser.objects.get(username=username)
@@ -24,9 +23,7 @@ def login_user(request):
             messages.error(request, "Email Does not match.")
             return redirect("user_auth:login_user")
 
-
-
-        user = authenticate(request, username=username, password=password, email=email, agency_id=agency_id)
+        user = authenticate(request, username=username, password=password, email=email)
         if user is not None:
             login(request, user)
             return redirect("index:home")
