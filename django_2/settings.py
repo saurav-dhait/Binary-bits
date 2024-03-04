@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-i&sre(^ud#1-17b0r9xhmyjqr&2@16gra&xx-o4vxsr5wyo1k%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['atlas-rescue.onrender.com',"127.0.0.1"]
+ALLOWED_HOSTS = ['atlas-rescue.onrender.com', "127.0.0.1"]
 
 # Application definition
 
@@ -71,7 +71,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
