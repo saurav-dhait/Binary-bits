@@ -5,4 +5,16 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request,"index/home.html")
+    return render(request, "index/home.html")
+
+
+def about(request):
+    return render(request, "index/about.html")
+
+
+def chatbot(request):
+    return render(request, "index/chatbot.html")
+
+
+def agency(request):
+    return render(request, "index/agency.html")
