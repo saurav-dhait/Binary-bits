@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import folium
 import pandas as pd
 import webbrowser
@@ -22,7 +22,7 @@ def report_home(request):
         data = pd.DataFrame({
             'Zipcode': ['ZIP1', 'ZIP2', 'ZIP3', "ZIP4", "ZIP5"],
             'Latitude': [21.144248, 21.135394, 21.151578, 21.110383, 21.120441],
-            'Longitude': [79.108952, 79.079147, 79.096908, 79.112890,79.030198]
+            'Longitude': [79.108952, 79.079147, 79.096908, 79.112890, 79.030198]
         })
 
         # Initialize the map
@@ -63,8 +63,12 @@ def report_home(request):
                 popup="Route"
             ).add_to(m)
 
-        m.save('map.html')
+        m.save("./templates/map.html")
 
-        webbrowser.open("map.html")
+        return redirect("report:map_display")
 
     return render(request, "report/report.html")
+
+
+def map_display(request):
+    return render(request, "map.html")
