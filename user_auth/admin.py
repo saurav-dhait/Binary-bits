@@ -13,7 +13,7 @@ class UserAdmin(DjangoUserAdmin):
                 "fields": ("username", "password1", "password2",
                            "first_name", "last_name", "email",
                            "is_active", "is_staff", "is_superuser",
-                           "groups", "user_permissions", "agency_id"),
+                           "groups", "user_permissions","agency"),
             },
         ),
     )

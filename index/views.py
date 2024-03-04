@@ -24,4 +24,5 @@ def get_agency_details(request, agency_id):
         "contact": agency.contact,
         "email": agency.email,
     }
-    return JsonResponse(data)
+    context = {"data":data}
+    return render(request, "index/agency.html", context=context)

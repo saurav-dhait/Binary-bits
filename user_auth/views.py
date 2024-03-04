@@ -12,7 +12,7 @@ def login_user(request):
         username = request.POST.get("username").lower()
         password = request.POST.get("password")
         email = request.POST.get("email")
-        agency_id = request.POST.get("agency_id")
+
 
         user = None
         try:
@@ -24,9 +24,7 @@ def login_user(request):
             messages.error(request, "Email Does not match.")
             return redirect("user_auth:login_user")
 
-        if user.agency_id != agency_id:
-            messages.error(request, "Invalid Agency Id")
-            return redirect("user_auth:login_user")
+
 
         user = authenticate(request, username=username, password=password, email=email, agency_id=agency_id)
         if user is not None:
@@ -44,7 +42,7 @@ def register_user(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
-        agency_id = request.POST.get('agency_id')
+
         user_already_exists = False
         try:
             already_user = MyUser.objects.get(username=username)
@@ -65,7 +63,7 @@ def register_user(request):
 
         if password == confirm_password:
 
-            user = MyUser.objects.create_user(username=username, email=email, password=password, agency_id=agency_id)
+            user = MyUser.objects.create_user(username=username, email=email, password=password)
 
             login(request, user)
 
